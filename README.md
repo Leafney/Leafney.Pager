@@ -6,23 +6,25 @@
 ## Test
 ### 通过URL参数分页
 
-	int total = 0;
-	//查询分页数据
-	var _list = new MakeData().GetPageList(Datacount, page, 10, out total);
-	//填充分页控件
-	PageList<Article> pagelist = new PageList<Article>(_list, page, 10, total);
-	return View(pagelist); 
+    int total = 0;
+    //查询分页数据
+    var _list = new MakeData().GetPageList(Datacount, page, 10, out total);
+    //填充分页控件
+    PageList<Article> pagelist = new PageList<Article>(_list, page, 10, total);
+
+    return View(pagelist); 
 	
 ***
 ### 通过路由规则方式分页
 
 ####调用：
+
 	int total = 0;
-	//查询分页数据 (分页参数设置为p)
-	var _listR = new MakeData().GetPageList(Datacount,p,10,out total);
-	//填充分页控件
-	PageList<Article> pagelistR = new PageList<Article>(_listR,p,10,total);
-	return View(pagelistR);
+    //查询分页数据 (分页参数设置为p)
+    var _listR = new MakeData().GetPageList(Datacount,p,10,out total);
+    //填充分页控件
+    PageList<Article> pagelistR = new PageList<Article>(_listR,p,10,total);
+    return View(pagelistR);
 
 ####自定义路由规则：
     //自定义分页插件路由规则
@@ -46,4 +48,4 @@
 	
 ***
 
-### 需要添加对System.Web.Mvc.dll的引用
+#### 需要添加对System.Web.Mvc.dll的引用
