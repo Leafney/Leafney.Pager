@@ -1,0 +1,5 @@
+D:\Xue\XProject\20150317-Leafney.XNet\Leafney.Pager\PagerTestData\obj\Debug\PagerTestData.csprojResolveAssemblyReference.cache
+D:\Xue\XProject\20150317-Leafney.XNet\Leafney.Pager\PagerTestData\bin\Debug\PagerTestData.dll
+D:\Xue\XProject\20150317-Leafney.XNet\Leafney.Pager\PagerTestData\bin\Debug\PagerTestData.pdb
+D:\Xue\XProject\20150317-Leafney.XNet\Leafney.Pager\PagerTestData\obj\Debug\PagerTestData.dll
+D:\Xue\XProject\20150317-Leafney.XNet\Leafney.Pager\PagerTestData\obj\Debug\PagerTestData.pdb

@@ -1,0 +1,395 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Leafney.Pager</name>
+    </assembly>
+    <members>
+        <member name="T:Leafney.Pager.IPageList">
+            <summary>
+            分页参数
+            </summary>
+        </member>
+        <member name="P:Leafney.Pager.IPageList.CurrentPageindex">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:Leafney.Pager.IPageList.PageSize">
+            <summary>
+            每页数据条数
+            </summary>
+        </member>
+        <member name="P:Leafney.Pager.IPageList.TotalCount">
+            <summary>
+            总记录数
+            </summary>
+        </member>
+        <member name="P:Leafney.Pager.IPageList.ViewPages">
+            <summary>
+            可见页码总数
+            </summary>
+        </member>
+        <member name="T:Leafney.Pager.PageList`1">
+            <summary>
+            绑定分页数据，设置分页参数
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Leafney.Pager.PageList`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Int32,System.Int32)">
+            <summary>
+            绑定分页数据，设置分页参数
+            默认每页10条数据，默认显示10个页码
+            </summary>
+            <param name="items">待分页显示的数据集合</param>
+            <param name="pageIndex">当前页码</param>
+            <param name="totalCount">总数据条数</param>
+        </member>
+        <member name="M:Leafney.Pager.PageList`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            绑定分页数据，设置分页参数
+            </summary>
+            <param name="items">待分页显示的数据集合</param>
+            <param name="pageIndex">当前页码</param>
+            <param name="pageSize">每页数据条数(默认每页10条)</param>
+            <param name="totalCount">总数据条数</param>
+        </member>
+        <member name="M:Leafney.Pager.PageList`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            绑定分页数据，设置分页参数
+            </summary>
+            <param name="items">待分页显示的数据集合</param>
+            <param name="pageIndex">当前页码</param>
+            <param name="pageSize">每页数据条数(默认每页10条)</param>
+            <param name="totalCount">总数据条数</param>
+            <param name="viewPages">可见页码总数(默认10个)</param>
+        </member>
+        <member name="P:Leafney.Pager.PageList`1.CurrentPageindex">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:Leafney.Pager.PageList`1.PageSize">
+            <summary>
+            页大小
+            </summary>
+        </member>
+        <member name="P:Leafney.Pager.PageList`1.TotalCount">
+            <summary>
+            总数据条数
+            </summary>
+        </member>
+        <member name="P:Leafney.Pager.PageList`1.ViewPages">
+            <summary>
+            可见页码数
+            </summary>
+        </member>
+        <member name="T:Leafney.Pager.RoutePageBuilder">
+            <summary>
+            高级路由分页生成
+            </summary>
+        </member>
+        <member name="M:Leafney.Pager.RoutePageBuilder.GetRoutePager(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            高级路由分页插件
+            </summary>
+            <param name="helper"></param>
+            <param name="routeName">分页路由规则的名称</param>
+            <param name="pageBreak">分页符(默认为page) 对应于路由规则中的分页参数</param>
+            <param name="currentPageIndex">当前页码</param>
+            <param name="pageSize">每页大小</param>
+            <param name="totalCount">总数据条数</param>
+            <param name="viewPage">可见页码数</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <param name="showPrevNextBtn">是否显示上一页下一页按钮</param>
+            <param name="showFirstLastBtn">是否显示首页末页按钮</param>
+            <param name="showPageCount">是否显示总页数</param>
+            <returns></returns>
+        </member>
+        <member name="T:Leafney.Pager.RoutePageHelper">
+            <summary>
+            高级路由分页帮助类
+            </summary>
+        </member>
+        <member name="M:Leafney.Pager.RoutePageHelper.CreateRoutePageNumbers(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary)">
+            <summary>
+            生成数字页码
+            </summary>
+            <param name="helper"></param>
+            <param name="routeName">高级分页路由规则名称</param>
+            <param name="pageBreak">分页符(默认为page)对应于路由规则中的分页参数</param>
+            <param name="currentPageIndex">当前页码</param>
+            <param name="viewPage">可见页码总数</param>
+            <param name="pageCount">总页数</param>
+            <param name="rvdRoute">路由规则参数</param>
+            <param name="rvdQS">QueryString参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leafney.Pager.RoutePageHelper.CombineRouteValue(System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary)">
+            <summary>
+            合并三个RouteValueDictionary集合，如果key已存在，则用后者替换前者中的相应值
+            </summary>
+            <param name="rValue1">路由键值对集合</param>
+            <param name="rValue2">路由键值对集合</param>
+            <param name="rValue3">路由键值对集合</param>
+            <returns></returns>
+        </member>
+        <member name="T:Leafney.Pager.UrlPageBuilder">
+            <summary>
+            通过url参数方式生成分页的链接和页码
+            </summary>
+        </member>
+        <member name="M:Leafney.Pager.UrlPageBuilder.GetUrlPager(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            生成分页数据html代码
+            </summary>
+            <param name="pageBreak">分页符(默认为page)</param>
+            <param name="currentPageIndex">当前页码</param>
+            <param name="pageSize">每页数据条数</param>
+            <param name="totalCount">总记录数</param>
+            <param name="viewPage">可见页码总数(默认10个)</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <param name="showPrevNextBtn">是否显示上一页下一页</param>
+            <param name="showFirstLastBtn">是否显示首页末页</param>
+            <param name="showPageCount">是否显示总页数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leafney.Pager.UrlPageBuilder.GetPager(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            生成分页数据html代码
+            </summary>
+            <param name="pageBreak">分页符(默认为page)</param>
+            <param name="currentPageIndex">当前页码</param>
+            <param name="pageSize">每页数据条数</param>
+            <param name="totalCount">总记录数</param>
+            <param name="viewPage">可见页码总数(默认10个)</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <param name="showPrevNextBtn">是否显示上一页下一页</param>
+            <param name="showFirstLastBtn">是否显示首页末页</param>
+            <param name="showPageCount">是否显示总页数</param>
+            <returns></returns>
+        </member>
+        <member name="T:Leafney.Pager.UrlPageHelper">
+            <summary>
+            url参数分页帮助类
+            </summary>
+        </member>
+        <member name="M:Leafney.Pager.UrlPageHelper.CreateUrlPageNumbers(System.Int32,System.Int32,System.Int32,System.Text.StringBuilder)">
+            <summary>
+            生成数字页码
+            </summary>
+            <param name="currentPageIndex">当前页码</param>
+            <param name="viewPage">可见页码总数</param>
+            <param name="pageCount">总页数</param>
+            <param name="url">根url</param>
+            <returns></returns>
+        </member>
+        <member name="T:Leafney.Pager.XStrPager">
+            <summary>
+            URL参数分页，可用于WebForm和MVC中
+            （page作为QueryString参数值）
+            </summary>
+        </member>
+        <member name="M:Leafney.Pager.XStrPager.Pager(Leafney.Pager.IPageList)">
+            <summary>
+            URL参数分页，page作为QueryString参数值
+            </summary>
+            <param name="pageList">分页数据集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leafney.Pager.XStrPager.Pager(Leafney.Pager.IPageList,System.Boolean)">
+            <summary>
+            URL参数分页，page作为QueryString参数值
+            </summary>
+            <param name="pageList">分页数据集合</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leafney.Pager.XStrPager.Pager(Leafney.Pager.IPageList,System.String)">
+            <summary>
+            URL参数分页，page作为QueryString参数值
+            </summary>
+            <param name="pageList">分页数据集合</param>
+            <param name="pageBreak">分页符（默认为page）</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leafney.Pager.XStrPager.Pager(Leafney.Pager.IPageList,System.String,System.Boolean)">
+            <summary>
+            URL参数分页，page作为QueryString参数值
+            </summary>
+            <param name="pageList">分页数据集合</param>
+            <param name="pageBreak">分页符（默认为page）</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leafney.Pager.XStrPager.Pager(Leafney.Pager.IPageList,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            URL参数分页，page作为QueryString参数值
+            </summary>
+            <param name="pageList">分页数据集合</param>
+            <param name="pageBreak">分页符（默认为page）</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <param name="showPrevNextBtn">是否显示上一页下一页按钮</param>
+            <param name="showFirstLastBtn">是否显示首页末页按钮</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leafney.Pager.XStrPager.Pager(Leafney.Pager.IPageList,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            URL参数分页，page作为QueryString参数值
+            </summary>
+            <param name="pageList">分页数据集合</param>
+            <param name="pageBreak">分页符（默认为page）</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <param name="showPrevNextBtn">是否显示上一页下一页按钮</param>
+            <param name="showFirstLastBtn">是否显示首页末页按钮</param>
+            <param name="showPageCount">是否显示总页数</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.XRoutePager">
+            <summary>
+            高级路由分页
+            通过RouteLink()匹配相应路由规则生成a链接
+            根据路由规则自动匹配相应参数
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.XRoutePager.PagerR(System.Web.Mvc.HtmlHelper,Leafney.Pager.IPageList,System.String)">
+            <summary>
+            高级路由分页，匹配相应路由规则生成分页链接
+            </summary>
+            <param name="helper">HtmlHelper</param>
+            <param name="pageList">分页数据集合</param>
+            <param name="routeName">自定义分页路由规则名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.XRoutePager.PagerR(System.Web.Mvc.HtmlHelper,Leafney.Pager.IPageList,System.String,System.String)">
+            <summary>
+            高级路由分页，匹配相应路由规则生成分页链接
+            </summary>
+            <param name="helper">HtmlHelper</param>
+            <param name="pageList">分页数据集合</param>
+            <param name="routeName">自定义分页路由规则名称</param>
+            <param name="pageBreak">分页符（默认为page，必须和自定义分页路由规则中的值相同）</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.XRoutePager.PagerR(System.Web.Mvc.HtmlHelper,Leafney.Pager.IPageList,System.String,System.Boolean)">
+            <summary>
+            高级路由分页，匹配相应路由规则生成分页链接
+            </summary>
+            <param name="helper">HtmlHelper</param>
+            <param name="pageList">分页数据集合</param>
+            <param name="routeName">自定义分页路由规则名称</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.XRoutePager.PagerR(System.Web.Mvc.HtmlHelper,Leafney.Pager.IPageList,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            高级路由分页，匹配相应路由规则生成分页链接
+            </summary>
+            <param name="helper">HtmlHelper</param>
+            <param name="pageList">分页数据集合</param>
+            <param name="routeName">自定义分页路由规则名称</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <param name="showPrevNextBtn">是否显示上一页下一页按钮</param>
+            <param name="showFirstLastBtn">是否显示首页末页按钮</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.XRoutePager.PagerR(System.Web.Mvc.HtmlHelper,Leafney.Pager.IPageList,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            高级路由分页，匹配相应路由规则生成分页链接
+            </summary>
+            <param name="helper">HtmlHelper</param>
+            <param name="pageList">分页数据集合</param>
+            <param name="routeName">自定义分页路由规则名称</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <param name="showPrevNextBtn">是否显示上一页下一页按钮</param>
+            <param name="showFirstLastBtn">是否显示首页末页按钮</param>
+            <param name="showPageCount">是否显示总页数</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.XRoutePager.PagerR(System.Web.Mvc.HtmlHelper,Leafney.Pager.IPageList,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            高级路由分页，匹配相应路由规则生成分页链接
+            </summary>
+            <param name="helper">HtmlHelper</param>
+            <param name="pageList">分页数据集合</param>
+            <param name="routeName">自定义分页路由规则名称</param>
+            <param name="pageBreak">分页符（默认为page，必须和自定义分页路由规则中的值相同）</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <param name="showPrevNextBtn">是否显示上一页下一页按钮</param>
+            <param name="showFirstLastBtn">是否显示首页末页按钮</param>
+            <param name="showPageCount">是否显示总页数</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.XUrlPager">
+            <summary>
+            MVC中分页参数page作为QueryString参数值实现分页
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.XUrlPager.PagerU(System.Web.Mvc.HtmlHelper,Leafney.Pager.IPageList)">
+            <summary>
+            分页数据显示（page作为QueryString参数值）
+            QueryString形式page=1
+            </summary>
+            <param name="helper">HtmlHelper</param>
+            <param name="pageList">分页数据集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.XUrlPager.PagerU(System.Web.Mvc.HtmlHelper,Leafney.Pager.IPageList,System.Boolean)">
+            <summary>
+            分页数据显示（page作为QueryString参数值）
+            QueryString形式page=1
+            </summary>
+            <param name="helper">HtmlHelper</param>
+            <param name="pageList">分页数据集合</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.XUrlPager.PagerU(System.Web.Mvc.HtmlHelper,Leafney.Pager.IPageList,System.String)">
+            <summary>
+            分页数据显示（page作为QueryString参数值）
+            QueryString形式page=1
+            </summary>
+            <param name="helper">HtmlHelper</param>
+            <param name="pageList">分页数据集合</param>
+            <param name="pageBreak">分页符（默认为page）</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.XUrlPager.PagerU(System.Web.Mvc.HtmlHelper,Leafney.Pager.IPageList,System.String,System.Boolean)">
+            <summary>
+            一般分页数据显示（page作为QueryString参数值）
+            QueryString形式page=1
+            </summary>
+            <param name="helper">HtmlHelper</param>
+            <param name="pageList">分页数据集合</param>
+            <param name="pageBreak">分页符（默认为page）</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.XUrlPager.PagerU(System.Web.Mvc.HtmlHelper,Leafney.Pager.IPageList,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            一般分页数据显示（page作为QueryString参数值）
+            QueryString形式page=1
+            </summary>
+            <param name="helper">HtmlHelper</param>
+            <param name="pageList">分页数据集合</param>
+            <param name="pageBreak">分页符（默认为page）</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <param name="showPrevNextBtn">是否显示上一页下一页按钮</param>
+            <param name="showFirstLastBtn">是否显示首页末页按钮</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.XUrlPager.PagerU(System.Web.Mvc.HtmlHelper,Leafney.Pager.IPageList,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            分页数据显示（page作为QueryString参数值）
+            QueryString形式page=1
+            </summary>
+            <param name="helper">HtmlHelper</param>
+            <param name="pageList">分页数据集合</param>
+            <param name="pageBreak">分页符（默认为page）</param>
+            <param name="showOnlyOneDisplayed">当分页总数据条数只够显示一页时，是否显示分页插件 默认不显示</param>
+            <param name="showPrevNextBtn">是否显示上一页下一页按钮</param>
+            <param name="showFirstLastBtn">是否显示首页末页按钮</param>
+            <param name="showPageCount">是否显示总页数</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

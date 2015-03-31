@@ -1,0 +1,40 @@
+﻿@model Leafney.Pager.PageList<PagerTestData.Article>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="/Themes/css/xpager.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <ul>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <li>@(item.Title)</li>
+                }
+            }
+        </ul>
+    </div>
+
+    @*通过url参数方式分页*@
+    @*@Html.PagerU(Model)*@
+    @*------------------*@
+
+    @*通过路由规则方式分页*@
+    @Html.PagerR(Model, "RouteFY","p")
+    @*------------------*@
+
+    @*通过普通分页url参数方式*@
+   @* @Html.Raw(Leafney.Pager.XStrPager.Pager(Model,"p"))*@
+
+    </body>
+    </html>

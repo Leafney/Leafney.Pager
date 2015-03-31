@@ -1,0 +1,116 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+.x-pager {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+    .x-pager a {
+        text-decoration: none;
+        padding: 4px 8px;
+        border-radius: 4px;
+        color: #333;
+        background: #fff;
+        border: 1px solid #ccc;
+    }
+
+.x-pitem > a:hover {
+    color: #fff;
+    background: #fb9400;
+    border-color: #fb9400;
+}
+
+.x-curr {
+    padding: 5px 9px;
+    border-radius: 4px;
+    color: #fff;
+    background: #fb9400;
+    border-color: #fb9400;
+    display: inline-block;
+}
+/*上一页 箭头*/
+.x-pitem i.xprev {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    margin: 0px 4px 3px -6px;
+    border-left: 5px dashed transparent;
+    border-bottom: 5px dashed transparent;
+    border-top: 5px dashed transparent;
+    border-right: 5px solid #ccc;
+}
+
+/*下一页 箭头*/
+.x-pitem i.xnext {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    margin: 0px -6px 3px 4px;
+    border-top: 5px dashed transparent;
+    border-bottom: 5px dashed transparent;
+    border-right: 5px dashed transparent;
+    border-left: 5px solid #ccc;
+}
+/*箭头 鼠标移入效果*/
+.x-pitem > a:hover .xprev {
+    border-right: 5px solid #fff;
+}
+
+.x-pitem > a:hover .xnext {
+    border-left: 5px solid #fff;
+}
+
+.x-pitem .xpcount {
+    margin: 3px;
+}
+.x-num > a {
+    display: inline-block;
+    width: 4%;
+    text-align: center;
+}
+
+/*响应式*/
+@media screen and (min-width: 601px) {
+    .x-pager {
+        width: 660px;
+    }
+    /*当前页显示总页数*/
+    .x-curr > i.xmid {
+        display: none;
+    }
+    /*页码元素间隔*/
+    .x-pager > span {
+        margin: 3px;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    .x-pager {
+        width: 286px;
+    }
+    /*当前页显示总页数*/
+    .x-curr > i.xmid {
+        display: inline;
+    }
+    /*页码元素间隔*/
+    .x-pager > span {
+        margin: 3px 4%;
+    }
+    /*非当前页的数字页码*/
+    span.x-num {
+        display: none;
+    }
+    /*共n页*/
+    span.x-pcon {
+        display: none;
+    }
+    /*首尾*/
+    span.x-fied {
+        display: none;
+    }
+}
