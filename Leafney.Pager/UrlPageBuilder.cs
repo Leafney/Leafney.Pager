@@ -96,7 +96,6 @@ namespace Leafney.Pager
             //拼接生成的字符串
             StringBuilder sbuilder = new StringBuilder();
             sbuilder.Append("<div class=\"x-pager\">");
-            //string u_br = "\r\n";//换行(用于输出到页面中看着整齐) 
             //url
             StringBuilder surl = new StringBuilder();
             string basePath = HttpContext.Current.Request.Url.AbsolutePath;
@@ -124,8 +123,7 @@ namespace Leafney.Pager
             //是否显示首页 末页
             if (showFirstLastBtn)
             {
-                //<span class="x-pitem"><a href="/?page=1">首页</a></span>
-                //更新v2.0 <span class="x-pitem x-fied"><a href="/?page=1">首页</a></span>
+                //更新 <span class="x-pitem x-fied"><a href="/?page=1">首页</a></span>
                 string u_first = "<span class=\"x-pitem x-fied\"><a href=\"{0}\">首页</a></span>";
                 if (currentPageIndex <= 1)
                 {
@@ -207,7 +205,6 @@ namespace Leafney.Pager
             #endregion
 
             sbuilder.Append("</div>");
-            //return MvcHtmlString.Create(sbuilder.ToString());
             return sbuilder.ToString();
         }
         #endregion

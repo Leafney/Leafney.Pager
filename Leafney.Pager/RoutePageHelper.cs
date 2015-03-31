@@ -54,17 +54,10 @@ namespace Leafney.Pager
                 if (i == currentPageIndex)
                 {
                     //当前页码
-                    //v1.0  <span class="xcurr">5</span>
-                    //更新v2.0：<span class="xcurr">10<i class="xmid"> / 19</i></span>
                     builder.AppendFormat(u_curr, i, pageCount);
                 }
                 else
                 {
-                    //<span class="x-pitem"><a href="/?page=2">2</a></span>
-                    //更新v2.0 <span class="x-pitem x-num"><a href="/?page=4">4</a></span>
-                    // v2.1 
-
-
                     //处理参数集合
                     var r_page = new RouteValueDictionary();
                     r_page.Add(pageBreak, i);

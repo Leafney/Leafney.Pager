@@ -59,7 +59,7 @@ namespace Leafney.Pager
             }
             #endregion
 
-            #region 控制当总数据条数只够显示一页时，是否仍显示分页插件 2015-2-13 16:36:26添加
+            #region 控制当总数据条数只够显示一页时，是否仍显示分页插件
 
             //当没有数据显示时，默认不显示分页插件
             if (pageCount <= 0)
@@ -84,7 +84,6 @@ namespace Leafney.Pager
             //拼接生成的字符串
             StringBuilder sbuilder = new StringBuilder();
             sbuilder.Append("<div class=\"x-pager\">");
-            //string u_br = "\r\n";//换行(用于输出到页面中看着整齐) 
 
             #region 处理路由参数及QueryString参数
 
@@ -112,9 +111,6 @@ namespace Leafney.Pager
             //是否显示首页 末页
             if (showFirstLastBtn)
             {
-                //<span class="x-pitem"><a href="/?page=1">首页</a></span>
-                //更新v2.0 <span class="x-pitem x-fied"><a href="/?page=1">首页</a></span>
-                //更新v2.1 <span class="x-pitem x-fied"><a href="javascript:void(0);">首页</a></span>
                 string u_first = "<span class=\"x-pitem x-fied\">{0}</span>";
                 if (currentPageIndex <= 1)
                 {
@@ -122,7 +118,6 @@ namespace Leafney.Pager
                 }
                 else
                 {
-                    //v2.1 <span class="x-pitem x-fied"><a href="/1">首页</a></span>
                     //处理参数集合
                     var r_page = new RouteValueDictionary();
                     r_page.Add(pageBreak, 1);
@@ -136,7 +131,6 @@ namespace Leafney.Pager
             //是否显示上一页 下一页
             if (showPrevNextBtn)
             {
-                // <span class="x-pitem"><a href="javascript:void(0);"><i class="xprev"></i>上一页</a></span>
                 //利用两次字符串格式化插入的方式
                 string u_spanPN = "<span class=\"x-pitem\">{0}</span>";
                 string u_prev = "<i class=\"xprev\"></i>上一页";
@@ -166,7 +160,6 @@ namespace Leafney.Pager
             //是否显示上一页 下一页
             if (showPrevNextBtn)
             {
-                //<span class="x-pitem"><a href="/2">下一页<i class="xnext"></i></a></span>
                 //利用两次字符串格式化插入的方式
                 string u_spanPN = "<span class=\"x-pitem\">{0}</span>";
                 string u_next = "下一页<i class=\"xnext\"></i>";
@@ -191,7 +184,6 @@ namespace Leafney.Pager
             //是否显示首页 末页
             if (showFirstLastBtn)
             {
-                //<span class="x-pitem x-fied"><a href="/38">末页</a></span>
                 string u_last = "<span class=\"x-pitem x-fied\">{0}</span>";
                 if (currentPageIndex == pageCount)
                 {
@@ -211,7 +203,6 @@ namespace Leafney.Pager
             #region 是否显示总页数  共n页
             if (showPageCount)
             {
-                //<span class="x-pitem">&nbsp;共<i class="xpcount">80</i>页</span>
                 string u_pcount = "<span class=\"x-pitem x-pcon\"> 共<i class=\"xpcount\">{0}</i>页</span>";
                 sbuilder.AppendFormat(u_pcount, pageCount);
             }

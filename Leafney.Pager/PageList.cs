@@ -17,7 +17,6 @@ namespace Leafney.Pager
         /// <param name="totalCount">总数据条数</param>
         public PageList(IEnumerable<T> items, int pageIndex, int totalCount)
         {
-            //如果items为null，这里会抛异常
             if (items != null)
             {
                 AddRange(items);
@@ -37,7 +36,6 @@ namespace Leafney.Pager
         /// <param name="totalCount">总数据条数</param>
         public PageList(IEnumerable<T> items, int pageIndex, int pageSize, int totalCount)
         {
-            //如果items为null，这里会抛异常
             if (items != null)
             {
                 AddRange(items);
@@ -57,7 +55,6 @@ namespace Leafney.Pager
         /// <param name="viewPages">可见页码总数(默认10个)</param>
         public PageList(IEnumerable<T> items, int pageIndex, int pageSize, int totalCount, int viewPages)
         {
-            //如果items为null，这里会抛异常
             if (items != null)
             {
                 AddRange(items);

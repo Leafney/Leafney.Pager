@@ -30,7 +30,6 @@ namespace Leafney.Pager
                 firstIndex = lastIndex - viewPage + 1;
             }
             //如果重新计算出的第一页页码小于1，则重置首页页码为1
-            // 2015-2-2 11:28:33 修改这个bug
             if (firstIndex < 1)
             {
                 firstIndex = 1;
@@ -45,14 +44,12 @@ namespace Leafney.Pager
             {
                 if (i == currentPageIndex)
                 {
-                    //当前页码v1.0  <span class="xcurr">5</span>
-                    //更新v2.0：<span class="xcurr">10<i class="xmid"> / 19</i></span>
+                    //更新：<span class="xcurr">10<i class="xmid"> / 19</i></span>
                     builder.AppendFormat(u_curr, i, pageCount);
                 }
                 else
                 {
-                    //<span class="x-pitem"><a href="/?page=2">2</a></span>
-                    //更新v2.0 <span class="x-pitem x-num"><a href="/?page=4">4</a></span>
+                    //更新<span class="x-pitem x-num"><a href="/?page=4">4</a></span>
                     string u_temp = string.Format(url.ToString(), i);
                     builder.AppendFormat(u_item, u_temp, i);
                 }
